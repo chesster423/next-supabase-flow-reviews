@@ -1,6 +1,4 @@
 import React from "react";
-import AuthButton from "@/components/AuthButton";
-import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
@@ -22,30 +20,11 @@ export default async function DashboardLayout ({ children }: { children: React.R
           This is a protected page that you can only see as an authenticated
           user
         </div>
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-            <div><Link href="/dashboard/games">Dashboard</Link></div>
-            <AuthButton />
-          </div>
-        </nav>
       </div>
 
       <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
         {children}
       </div>
-      <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
-        <p>
-          Powered by{" "}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
-          </a>
-        </p>
-      </footer>
     </div>
   )
 }
